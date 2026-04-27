@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="ReserveStar.Core/ReserveStar.Core.csproj" />
+  <Project Path="ReserveStar.Data/ReserveStar.Data.csproj" />
+  <Project Path="ReserveStar.Helper/ReserveStar.Helper.csproj" />
+  <Project Path="ReserveStar.Utils/ReserveStar.Utils.csproj" />
+  <Project Path="ReserveStar.Application/ReserveStar.Application.csproj" />
+</Solution>

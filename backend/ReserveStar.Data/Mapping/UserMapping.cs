@@ -1,0 +1,45 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using ReserveStar.Data.Domain;
+
+namespace ReserveStar.Data.Mapping;
+
+public class UserMapping : BaseTableMapping<User>
+{
+   public override void Configure(EntityTypeBuilder<User> builder)
+   {
+      base.Configure(builder);
+
+      builder.Property(e => e.FirstName).IsRequired().HasMaxLength(63);
+      builder.Property(e => e.LastName).IsRequired().HasMaxLength(63);
+      builder.Property(e => e.Username).IsRequired().HasMaxLength(31);
+      builder.Property(e => e.Email).IsRequired().HasMaxLength(127);
+      builder.Property(e => e.PasswordSalt).IsRequired();
+      builder.Property(e => e.PasswordHash).IsRequired();
+      builder.Property(e => e.IsSuperAdmin).IsRequired().HasDefaultValue(false);
+      builder.Property(e => e.IsTenantAdmin).IsRequired().HasDefaultValue(false);
+      builder.Property(e => e.MustChangePassword).IsRequired().HasDefaultValue(false);
+      builder.Property(e => e.OneTimePasswordUsed).IsRequired().HasDefaultValue(false);
+      builder.Property(e => e.OneTimePasswordExpiresAt);
+      builder.Property(e => e.RefreshToken).HasMaxLength(255);
+      builder.Property(e => e.RefreshTokenExpireDate);
+
+      // Relations
+
+      builder.HasOne(e => e.Company)
+         .WithMany()
+         .HasForeignKey(e => e.CompanyId)
+         .OnDelete(DeleteBehavior.Cascade);
+
+      builder.HasOne(e => e.Language)
+         .WithMany()
+         .HasForeignKey(e => e.LanguageId)
+         .OnDelete(DeleteBehavior.Restrict);
+
+      // INDEXES
+
+      builder.HasIndex(e => e.Email).IsUnique();
+      builder.HasIndex(e => e.Username).IsUnique();
+
+   }
+}
