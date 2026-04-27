@@ -19,7 +19,6 @@ public class BaseHandler
       }
       catch (Exception)
       {
-
          return key;
       }
    }
