@@ -19,8 +19,6 @@ public class UserMapping : BaseTableMapping<User>
       builder.Property(e => e.IsSuperAdmin).IsRequired().HasDefaultValue(false);
       builder.Property(e => e.IsTenantAdmin).IsRequired().HasDefaultValue(false);
       builder.Property(e => e.MustChangePassword).IsRequired().HasDefaultValue(false);
-      builder.Property(e => e.OneTimePasswordUsed).IsRequired().HasDefaultValue(false);
-      builder.Property(e => e.OneTimePasswordExpiresAt);
       builder.Property(e => e.RefreshToken).HasMaxLength(255);
       builder.Property(e => e.RefreshTokenExpireDate);
 

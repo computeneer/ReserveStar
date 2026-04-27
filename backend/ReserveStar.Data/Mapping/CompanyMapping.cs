@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using ReserveStar.Data.Domain;
 
@@ -14,7 +15,13 @@ public class CompanyMapping : BaseTableMapping<Company>
       builder.Property(e => e.LogoUrl);
       builder.Property(e => e.CompanyCode).IsRequired().HasMaxLength(15);
 
+      builder.HasMany(e => e.Tags)
+             .WithOne(f => f.Company)
+             .HasForeignKey(e => e.CompanyId)
+             .OnDelete(DeleteBehavior.Cascade);
+
       builder.HasIndex(e => e.Name).IsUnique();
       builder.HasIndex(e => e.CompanyCode).IsUnique();
+
    }
 }

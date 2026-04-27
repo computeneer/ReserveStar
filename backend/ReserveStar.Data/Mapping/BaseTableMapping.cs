@@ -18,5 +18,7 @@ public abstract class BaseTableMapping<T> : IEntityTypeConfiguration<T> where T 
       builder.Property(e => e.CreatedBy).IsRequired(false).HasDefaultValue(null);
       builder.Property(e => e.UpdatedBy).IsRequired(false);
       builder.Property(e => e.UpdatedAt).IsRequired(false);
+
+      builder.HasIndex(f => f.Id);
    }
 }

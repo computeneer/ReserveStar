@@ -6,4 +6,7 @@ public class Company : BaseEntity
    public string Description { get; set; } = null;
    public string LogoUrl { get; set; } = null;
    public required string CompanyCode { get; set; }
+
+   public List<Announcement> Announcements { get; set; } = [];
+   public List<Tag> Tags { get; set; } = [];
 }
