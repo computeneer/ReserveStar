@@ -65,7 +65,6 @@ public sealed class CacheManager : ICacheManager
             Id = f.Id,
             Description = f.Description ?? string.Empty,
             LogoUrl = f.LogoUrl ?? string.Empty,
-            WebsiteUrl = f.WebsiteUrl ?? string.Empty
          }).ToList();
       }))!;
    }
