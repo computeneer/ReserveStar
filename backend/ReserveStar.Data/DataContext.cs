@@ -19,6 +19,10 @@ public class DataContext : DbContext
       {
          if (string.IsNullOrEmpty(_connectionString))
          {
+            if (string.IsNullOrWhiteSpace(DefaultConnectionString))
+            {
+               throw new Exception("No ConnectionString provided");
+            }
             _connectionString = DefaultConnectionString;
          }
          return _connectionString;
