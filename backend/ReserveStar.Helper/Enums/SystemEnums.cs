@@ -9,3 +9,9 @@ public enum LanguageEnums
    [Description("0362ea1f-12f7-4634-8f9d-468388104fc4")]
    Turkish
 }
+
+public enum MediaType
+{
+   Announcement,
+   ProfilePicture
+}
