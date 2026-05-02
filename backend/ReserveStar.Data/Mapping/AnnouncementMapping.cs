@@ -12,7 +12,6 @@ public class AnnouncementMapping : BaseTableMapping<Announcement>
 
       builder.Property(e => e.Title).IsRequired().HasMaxLength(31);
       builder.Property(e => e.Content).IsRequired();
-      builder.Property(e => e.Images);
 
       builder.HasMany(e => e.Tags)
        .WithMany(e => e.Announcements)
@@ -21,6 +20,12 @@ public class AnnouncementMapping : BaseTableMapping<Announcement>
            j => j.HasOne(pt => pt.Announcement).WithMany().HasForeignKey(pt => pt.AnnouncementId),
            j => { j.HasKey(t => new { t.AnnouncementId, t.TagId }); }
        );
+
+      builder.HasMany(e => e.Medias)
+         .WithOne(e => e.Announcement)
+         .HasForeignKey(e => e.AnnouncementId)
+         .OnDelete(DeleteBehavior.Cascade);
+
 
       builder.HasOne(e => e.Company)
              .WithMany(e => e.Announcements)
