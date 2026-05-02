@@ -9,7 +9,7 @@ public class EnvironmentVariables
       {
          if (string.IsNullOrEmpty(_dbHost))
          {
-            _dbHost = Environment.GetEnvironmentVariable("STOCKAMA_DB_INSTANCE") ?? "localhost";
+            _dbHost = Environment.GetEnvironmentVariable("RESERVESTAR_DB_INSTANCE") ?? "localhost";
          }
          return _dbHost;
       }
@@ -24,7 +24,7 @@ public class EnvironmentVariables
       {
          if (string.IsNullOrEmpty(_dbPort))
          {
-            _dbPort = Environment.GetEnvironmentVariable("STOCKAMA_DB_PORT") ?? "5432";
+            _dbPort = Environment.GetEnvironmentVariable("RESERVESTAR_DB_PORT") ?? "5432";
          }
          return _dbPort;
       }
@@ -38,7 +38,7 @@ public class EnvironmentVariables
       {
          if (string.IsNullOrEmpty(_dbName))
          {
-            _dbName = Environment.GetEnvironmentVariable("STOCKAMA_DB_NAME") ?? "stockama";
+            _dbName = Environment.GetEnvironmentVariable("RESERVESTAR_DB_NAME") ?? "RESERVESTAR";
          }
          return _dbName;
       }
@@ -53,7 +53,7 @@ public class EnvironmentVariables
       {
          if (string.IsNullOrEmpty(_dbUser))
          {
-            _dbUser = Environment.GetEnvironmentVariable("STOCKAMA_DB_USERNAME") ?? "postgres";
+            _dbUser = Environment.GetEnvironmentVariable("RESERVESTAR_DB_USERNAME") ?? "postgres";
          }
          return _dbUser;
       }
@@ -68,7 +68,7 @@ public class EnvironmentVariables
       {
          if (string.IsNullOrEmpty(_dbPassword))
          {
-            _dbPassword = Environment.GetEnvironmentVariable("STOCKAMA_DB_PASSWORD") ?? "postgres";
+            _dbPassword = Environment.GetEnvironmentVariable("RESERVESTAR_DB_PASSWORD") ?? "postgres";
          }
          return _dbPassword;
       }
@@ -82,7 +82,7 @@ public class EnvironmentVariables
       {
          if (string.IsNullOrEmpty(_jwtTokenKey))
          {
-            _jwtTokenKey = Environment.GetEnvironmentVariable("STOCKAMA_JWT_TOKEN_KEY") ?? "secret";
+            _jwtTokenKey = Environment.GetEnvironmentVariable("RESERVESTAR_JWT_TOKEN_KEY") ?? "secret";
          }
          return _jwtTokenKey;
       }
@@ -97,7 +97,7 @@ public class EnvironmentVariables
       {
          if (string.IsNullOrEmpty(_redisServiceEndpoint))
          {
-            _redisServiceEndpoint = Environment.GetEnvironmentVariable("STOCKAMA_REDIS_SERVISE_ENDPOINT") ?? "";
+            _redisServiceEndpoint = Environment.GetEnvironmentVariable("RESERVESTAR_REDIS_SERVISE_ENDPOINT") ?? "";
          }
 
          return _redisServiceEndpoint;
@@ -114,7 +114,7 @@ public class EnvironmentVariables
       {
          if (string.IsNullOrEmpty(_redisServicePort))
          {
-            _redisServicePort = Environment.GetEnvironmentVariable("STOCKAMA_REDIS_SERVICE_PORT") ?? "";
+            _redisServicePort = Environment.GetEnvironmentVariable("RESERVESTAR_REDIS_SERVICE_PORT") ?? "";
          }
          return _redisServicePort;
       }
@@ -130,7 +130,7 @@ public class EnvironmentVariables
       {
          if (string.IsNullOrEmpty(_redisServicePassword))
          {
-            _redisServicePassword = Environment.GetEnvironmentVariable("STOCKAMA_REDIS_SERVISE_PASSWORD") ?? "";
+            _redisServicePassword = Environment.GetEnvironmentVariable("RESERVESTAR_REDIS_SERVISE_PASSWORD") ?? "";
          }
 
          return _redisServicePassword;
@@ -149,7 +149,7 @@ public class EnvironmentVariables
       {
          if (string.IsNullOrEmpty(_queueProvider))
          {
-            _queueProvider = Environment.GetEnvironmentVariable("STOCKAMA_QUEUE_PROVIDER") ?? "development";
+            _queueProvider = Environment.GetEnvironmentVariable("RESERVESTAR_QUEUE_PROVIDER") ?? "development";
          }
          return _queueProvider;
       }
@@ -163,7 +163,7 @@ public class EnvironmentVariables
       {
          if (string.IsNullOrEmpty(_rabbitMqHost))
          {
-            _rabbitMqHost = Environment.GetEnvironmentVariable("STOCKAMA_RABBITMQ_HOST") ?? "localhost";
+            _rabbitMqHost = Environment.GetEnvironmentVariable("RESERVESTAR_RABBITMQ_HOST") ?? "localhost";
          }
          return _rabbitMqHost;
       }
@@ -177,7 +177,7 @@ public class EnvironmentVariables
       {
          if (string.IsNullOrEmpty(_rabbitMqPort))
          {
-            _rabbitMqPort = Environment.GetEnvironmentVariable("STOCKAMA_RABBITMQ_PORT") ?? "5672";
+            _rabbitMqPort = Environment.GetEnvironmentVariable("RESERVESTAR_RABBITMQ_PORT") ?? "5672";
          }
          return _rabbitMqPort;
       }
@@ -191,7 +191,7 @@ public class EnvironmentVariables
       {
          if (string.IsNullOrEmpty(_rabbitMqUser))
          {
-            _rabbitMqUser = Environment.GetEnvironmentVariable("STOCKAMA_RABBITMQ_USER") ?? "guest";
+            _rabbitMqUser = Environment.GetEnvironmentVariable("RESERVESTAR_RABBITMQ_USER") ?? "guest";
          }
          return _rabbitMqUser;
       }
@@ -205,7 +205,7 @@ public class EnvironmentVariables
       {
          if (string.IsNullOrEmpty(_rabbitMqPassword))
          {
-            _rabbitMqPassword = Environment.GetEnvironmentVariable("STOCKAMA_RABBITMQ_PASSWORD") ?? "guest";
+            _rabbitMqPassword = Environment.GetEnvironmentVariable("RESERVESTAR_RABBITMQ_PASSWORD") ?? "guest";
          }
          return _rabbitMqPassword;
       }
@@ -219,7 +219,7 @@ public class EnvironmentVariables
       {
          if (string.IsNullOrEmpty(_rabbitMqVHost))
          {
-            _rabbitMqVHost = Environment.GetEnvironmentVariable("STOCKAMA_RABBITMQ_VHOST") ?? "/";
+            _rabbitMqVHost = Environment.GetEnvironmentVariable("RESERVESTAR_RABBITMQ_VHOST") ?? "/";
          }
          return _rabbitMqVHost;
       }
@@ -233,7 +233,7 @@ public class EnvironmentVariables
       {
          if (string.IsNullOrEmpty(_authClientType))
          {
-            _authClientType = Environment.GetEnvironmentVariable("STOCKAMA_AUTH_CLIENT_TYPE") ?? "web";
+            _authClientType = Environment.GetEnvironmentVariable("RESERVESTAR_AUTH_CLIENT_TYPE") ?? "web";
          }
          return _authClientType;
       }
